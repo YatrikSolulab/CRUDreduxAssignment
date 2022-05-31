@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import userReducer from "./features/reducers/userReducer";
+import userReducer from "./redux/reducers/userReducer";
 
 
 const store = configureStore({
