@@ -14,7 +14,9 @@ import userReducer from "./redux/reducers/userReducer";
 const store = configureStore({
   reducer: {
     user: userReducer,
+
   },
+  
 });
 
 

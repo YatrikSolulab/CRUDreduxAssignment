@@ -7,14 +7,16 @@ export const userSlice = createSlice({
   reducers: {
     addUser: (state, action) => {
       state.value.push(action.payload);
-      return state
+      return state;
     },
     updateUser: (state, action) => {
-        state.value = state.value.map(i => i.id == action.payload.id ? action.payload : i)
-        return state
+      state.value = state.value.map((i) =>
+        i.id == action.payload.id ? action.payload : i
+      );
+      return state;
     },
     deleteUser: (state, action) => {
-      state.value = state.value.filter(i => i.id !== action.payload)
+      state.value = state.value.filter((i) => i.id !== action.payload);
       return state;
     },
   },

@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { deleteUser, updateUser } from "../redux/reducers/userReducer";
 import DataTable from "react-data-table-component";
+import TextField from "./CustomComponents/CustomTextField";
+import CustomTextField from "./CustomComponents/CustomTextField";
+import CustomButton from "./CustomComponents/CustomButton";
 
 function DisplayTable() {
   const dispatch = useDispatch();
@@ -26,15 +29,15 @@ function DisplayTable() {
       name: "Actions",
       cell: (row) => (
         <>
-          <button
+          <CustomButton
             onClick={() => {
               dispatch(deleteUser(row.id));
             }}
             className="btn btn-sm red"
           >
             Delete
-          </button>
-          <button
+          </CustomButton>
+          <CustomButton
             onClick={() => {
               updateName(row.name);
               updatePosition(row.position);
@@ -45,7 +48,7 @@ function DisplayTable() {
             className="btn btn-sm green"
           >
             Update
-          </button>
+          </CustomButton>
         </>
       ),
     },
@@ -55,25 +58,25 @@ function DisplayTable() {
     <>
       {/* update form  */}
       <div>
-        <input
+        <CustomTextField
           type="text"
           defaultValue={name}
           value={name}
-          placeholder="Name"
+          placeholder="Update Name"
           onChange={(event) => {
             updateName(event.target.value);
           }}
         />
-        <input
+        <CustomTextField
           type="text"
           defaultValue={position}
           value={position}
-          placeholder="Position"
+          placeholder="Update Position"
           onChange={(event) => {
             updatePosition(event.target.value);
           }}
         />
-        <button
+        <CustomButton
           className="btn btn-sm green"
           onClick={() => {
             dispatch(
@@ -86,7 +89,7 @@ function DisplayTable() {
           }}
         >
           Save
-        </button>
+        </CustomButton>
       </div>
 {/* update form end  */}
       <DataTable
