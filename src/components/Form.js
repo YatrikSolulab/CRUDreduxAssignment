@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { useDispatch } from "react-redux";
-import { addUser } from "../features/reducers/userReducer";
+import { addUser } from "../redux/reducers/userReducer";
 function Form() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
